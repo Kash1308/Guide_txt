@@ -1,0 +1,95 @@
+
+Cloud Computing and Web Services - Easy Practicals (Code Snippets)
+
+----------------------------------------------------------
+Practical 1(A) – Currency Converter (Java - NetBeans)
+----------------------------------------------------------
+@WebMethod(operationName = "Convert")
+public Double Convert(@WebParam(name = "rps") double rps) {
+    double d;
+    d = rps / 83.5;
+    return d;
+}
+
+HTML Form (input.html):
+<form method="get" action="Output.jsp">
+    <p>Enter Currency in Rupees: <input type="text" name="rpstxt"></p>
+    <p><input type="Submit" value="Convert"></p>
+</form>
+
+JSP Page (Output.jsp):
+<%
+    try {
+        p2.CurrencyConvert_Service service = new p2.CurrencyConvert_Service();
+        p2.CurrencyConvert port = service.getCurrencyConvertPort();
+        double rps = Double.parseDouble(request.getParameter("rpstxt"));
+        java.lang.Double result = port.currConvert(rps);
+        out.println("Currency in Dollar :" + result);
+    } catch (Exception ex) { }
+%>
+
+----------------------------------------------------------
+Practical 2 – SOAP Web Service (Square of a Number)
+----------------------------------------------------------
+@WebMethod(operationName = "Sqr_Find")
+public Integer Sqr_Find(@WebParam(name = "n") int n) {
+    int s;
+    s = n * n;
+    return s;
+}
+
+HTML Form (NumInput.html):
+<form action="Output.jsp">
+    <p>Enter the Number: <input type="text" name="txtnum"></p>
+    <p><input type="submit" value="Find_SQR"></p>
+</form>
+
+JSP Page (Output.jsp):
+<%
+    try {
+        p1.SqrFindService_Service service = new p1.SqrFindService_Service();
+        p1.SqrFindService port = service.getSqrFindServicePort();
+        int n = Integer.parseInt(request.getParameter("txtnum"));
+        java.lang.Integer result = port.sqrFind(n);
+        out.println("Square of " + n + " is " + result);
+    } catch (Exception ex) { }
+%>
+
+----------------------------------------------------------
+Practical 4 – Google Maps API Integration
+----------------------------------------------------------
+Input.jsp:
+<form action="index.jsp">
+<pre>
+Enter latitude: <input type="text" name="t1" />
+Enter longitude: <input type="text" name="t2" />
+<input type="submit" value="Show" />
+</pre>
+</form>
+
+Index.jsp:
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#map { height: 400px; width: 100%; }
+</style>
+</head>
+<body>
+<%
+double lati = Double.parseDouble(request.getParameter("t1"));
+double longi = Double.parseDouble(request.getParameter("t2"));
+%>
+<h3> Google Maps </h3>
+<div id="map"></div>
+<script>
+function initMap() {
+    var info = { lat: <%=lati%>, lng: <%=longi%> };
+    var map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: info });
+    var marker = new google.maps.Marker({ position: info, map: map });
+}
+</script>
+<script async defer src="YOUR_GOOGLE_API_KEY_HERE"></script>
+</body>
+</html>
