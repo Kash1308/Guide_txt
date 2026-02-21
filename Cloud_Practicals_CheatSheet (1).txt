@@ -1,0 +1,353 @@
+1) Hello World 
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+_________________________________________
+
+2) Hello World 10 Times using for loop 
+
+class Hello10Times {
+    public static void main(String[] args) {
+        for(int i = 1; i <= 10; i++) {
+            System.out.println("Hello World");
+        }
+    }
+}
+
+_________________________________________
+
+3)Evaluate a + b * c % d
+
+import java.util.Scanner;
+
+class Expression {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
+
+        int result = a + b * c % d;
+        System.out.println("Result = " + result);
+    }
+}
+
+________________________________________
+
+4)Factorial using while loop 
+
+import java.util.Scanner;
+
+class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int fact = 1;
+        int i = 1;
+
+        while(i <= n) {
+            fact *= i;
+            i++;
+        }
+
+        System.out.println("Factorial = " + fact);
+    }
+}
+
+_________________________________________
+
+5) Biggest among three (if-else)
+
+import java.util.Scanner;
+
+class BiggestIf {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        if(a > b && a > c)
+            System.out.println("Biggest = " + a);
+        else if(b > c)
+            System.out.println("Biggest = " + b);
+        else
+            System.out.println("Biggest = " + c);
+    }
+}
+
+________________________________________
+
+6) biggest among three ( ternary)
+import java.util.Scanner;
+
+class BiggestTernary {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        int max = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+        System.out.println("Biggest = " + max);
+    }
+}
+
+________________________________________
+
+7)Grade using switch case
+
+import java.util.Scanner;
+
+class GradeSwitch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int marks = sc.nextInt();
+        int grade = marks / 10;
+
+        switch(grade) {
+            case 10:
+            case 9: System.out.println("A"); break;
+            case 8: System.out.println("B"); break;
+            case 7: System.out.println("C"); break;
+            case 6: System.out.println("D"); break;
+            default: System.out.println("Fail");
+        }
+    }
+}
+________________________________________
+
+8️⃣ Dynamic initialization – Average of n numbers
+
+import java.util.Scanner;
+
+class AverageN {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int sum = 0;
+
+        for(int i = 0; i < n; i++) {
+            sum += sc.nextInt();
+        }
+
+        double avg = (double)sum / n;
+        System.out.println("Average = " + avg);
+    }
+}
+________________________________________
+
+9️⃣ Area & Perimeter of circle (class & object)
+
+class Circle {
+    double r;
+
+    Circle(double r) {
+        this.r = r;
+    }
+
+    void calculate() {
+        System.out.println("Area = " + (3.14 * r * r));
+        System.out.println("Perimeter = " + (2 * 3.14 * r));
+    }
+
+    public static void main(String[] args) {
+        Circle c = new Circle(5);
+        c.calculate();
+    }
+}
+_________________________________________
+
+🔟 Access member variable using constructor
+
+class Student {
+    int id;
+    String name;
+
+    Student(int i, String n) {
+        id = i;
+        name = n;
+    }
+
+    void display() {
+        System.out.println(id + " " + name);
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student(1, "John");
+        s.display();
+    }
+}
+
+_________________________________________
+
+1️⃣1️⃣ Addition of two matrices
+
+class MatrixAdd {
+    public static void main(String[] args) {
+        int a[][] = {{1,2},{3,4}};
+        int b[][] = {{5,6},{7,8}};
+        int c[][] = new int[2][2];
+
+        for(int i=0;i<2;i++) {
+            for(int j=0;j<2;j++) {
+                c[i][j] = a[i][j] + b[i][j];
+                System.out.print(c[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+________________________________________
+
+1️⃣2️⃣ Area of rectangle using single inheritance
+
+class Shape {
+    int l, b;
+}
+
+class Rectangle extends Shape {
+    void area() {
+        System.out.println("Area = " + (l * b));
+    }
+
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle();
+        r.l = 5;
+        r.b = 4;
+        r.area();
+    }
+}
+
+________________________________________
+
+1️⃣3️⃣ Volume of box using this keyword
+
+class Box {
+    int l, b, h;
+
+    Box(int l, int b, int h) {
+        this.l = l;
+        this.b = b;
+        this.h = h;
+    }
+
+    void volume() {
+        System.out.println("Volume = " + (l * b * h));
+    }
+
+    public static void main(String[] args) {
+        Box obj = new Box(2,3,4);
+        obj.volume();
+    }
+}
+_________________________________________
+
+1️⃣4️⃣ Average using method overloading
+
+class AvgOverload {
+
+    void avg(int a, int b, int c) {
+        System.out.println("Average = " + (a+b+c)/3);
+    }
+
+    void avg(double a, double b, double c) {
+        System.out.println("Average = " + (a+b+c)/3);
+    }
+
+    public static void main(String[] args) {
+        AvgOverload obj = new AvgOverload();
+        obj.avg(3,6,9);
+        obj.avg(3.5,6.5,9.5);
+    }
+}
+
+________________________________________
+
+1️⃣5️⃣ Average using method overriding
+
+class Parent {
+    void avg(int a, int b, int c) {
+        System.out.println("Average = " + (a+b+c)/3);
+    }
+}
+
+class Child extends Parent {
+    void avg(int a, int b, int c) {
+        System.out.println("Average (Overridden) = " + (a+b+c)/3);
+    }
+
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.avg(3,6,9);
+    }
+}
+
+________________________________________
+
+1️⃣6️⃣ Interface Area – area of circle
+
+interface Area {
+    void calculate(double r);
+}
+
+class CircleArea implements Area {
+    public void calculate(double r) {
+        System.out.println("Area = " + (3.14 * r * r));
+    }
+
+    public static void main(String[] args) {
+        CircleArea obj = new CircleArea();
+        obj.calculate(5);
+    }
+}
+
+_________________________________________
+
+1️⃣7️⃣ String palindrome
+
+import java.util.Scanner;
+
+class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        String rev = "";
+
+        for(int i = str.length()-1; i >= 0; i--) {
+            rev += str.charAt(i);
+        }
+
+        if(str.equals(rev))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+
+________________________________________
+
+1️⃣8️⃣ Sort list of strings (ascending)
+
+import java.util.*;
+
+class SortStrings {
+    public static void main(String[] args) {
+        String arr[] = {"Banana","Apple","Mango","Cherry"};
+
+        Arrays.sort(arr);
+
+        for(String s : arr)
+            System.out.println(s);
+    }
+}
