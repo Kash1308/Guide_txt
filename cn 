@@ -1,0 +1,230 @@
+
+✅ PROGRAM 1: Configure IP Routing Using RIP
+Aim:
+To configure IP routing using RIP protocol between routers.
+Topology:
+2 Routers connected with 2 LAN networks.
+IP Addressing:
+Device
+Interface
+IP Address
+R1
+Fa0/0
+192.168.1.1
+R1
+S0/0/0
+10.0.0.1
+R2
+Fa0/0
+192.168.2.1
+R2
+S0/0/0
+10.0.0.2
+Steps:
+Step 1: Configure IP on R1
+Copy code
+
+enable
+configure terminal
+interface fa0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+
+interface s0/0/0
+ip address 10.0.0.1 255.0.0.0
+no shutdown
+exit
+Step 2: Configure RIP on R1
+Copy code
+
+router rip
+version 2
+network 192.168.1.0
+network 10.0.0.0
+exit
+Step 3: Configure R2 similarly
+Copy code
+
+enable
+configure terminal
+interface fa0/0
+ip address 192.168.2.1 255.255.255.0
+no shutdown
+exit
+
+interface s0/0/0
+ip address 10.0.0.2 255.0.0.0
+no shutdown
+exit
+
+router rip
+version 2
+network 192.168.2.0
+network 10.0.0.0
+exit
+Step 4: Verification
+Copy code
+
+show ip route
+ping 192.168.1.1
+
+
+✅ PROGRAM 2: Configuring Simple & Multi-Area OSPF
+Aim:
+To configure OSPF routing protocol.
+Simple OSPF (Single Area)
+On Router:
+Copy code
+
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+network 10.0.0.0 0.255.255.255 area 0
+Multi Area OSPF Example
+Router 1 (Area 0)
+Copy code
+
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+Router 2 (Area 1)
+Copy code
+
+router ospf 1
+network 192.168.2.0 0.0.0.255 area 1
+Verification
+Copy code
+
+show ip ospf neighbor
+show ip route
+
+
+✅ PROGRAM 3: Configuration & Implementation of DHCP Server
+Aim:
+To configure DHCP server in Linux.
+Steps:
+Step 1: Install DHCP
+Copy code
+
+sudo apt install isc-dhcp-server
+Step 2: Edit config file
+Copy code
+
+sudo nano /etc/dhcp/dhcpd.conf
+Add:
+Copy code
+
+subnet 192.168.1.0 netmask 255.255.255.0 {
+ range 192.168.1.100 192.168.1.200;
+ option routers 192.168.1.1;
+ option domain-name-servers 8.8.8.8;
+}
+Step 3: Start Service
+Copy code
+
+sudo systemctl start isc-dhcp-server
+sudo systemctl enable isc-dhcp-server
+
+
+✅ PROGRAM 4: Configuration & Implementation of DNS Server
+Aim:
+To configure DNS server using BIND.
+Steps:
+Step 1: Install BIND
+Copy code
+
+sudo apt install bind9
+Step 2: Edit named.conf.local
+Copy code
+
+zone "example.com" {
+ type master;
+ file "/etc/bind/db.example.com";
+};
+Step 3: Create Zone File
+Copy code
+
+sudo nano /etc/bind/db.example.com
+Add:
+Copy code
+
+$TTL 604800
+@ IN SOA example.com. root.example.com. (
+2
+604800
+86400
+2419200
+604800 )
+
+@ IN NS example.com.
+@ IN A 192.168.1.10
+Step 4: Restart
+Copy code
+
+sudo systemctl restart bind9
+
+
+✅ PROGRAM 5: Configuration & Implementation of HTTP Server
+Aim:
+To configure Apache HTTP server.
+Steps:
+Step 1: Install Apache
+Copy code
+
+sudo apt install apache2
+Step 2: Start Service
+Copy code
+
+sudo systemctl start apache2
+Step 3: Create Web Page
+Copy code
+
+sudo nano /var/www/html/index.html
+Add:
+HTML
+Copy code
+<h1>Welcome to My HTTP Server</h1>
+Step 4: Open in browser
+Copy code
+
+http://192.168.1.10
+
+
+✅ PROGRAM 6: Configuration of Email Server
+Aim:
+To configure Mail Server using Postfix.
+Steps:
+Step 1: Install Postfix
+Copy code
+
+sudo apt install postfix
+Select: Internet Site
+Step 2: Configure
+Edit:
+Copy code
+
+sudo nano /etc/postfix/main.cf
+Set:
+Copy code
+
+myhostname = mail.example.com
+mydomain = example.com
+Step 3: Restart
+Copy code
+
+sudo systemctl restart postfix
+Step 4: Send Test Mail
+Copy code
+
+mail user@example.com
+🎯 All Programs Arranged Sequentially
+RIP Routing
+OSPF (Single & Multi Area)
+DHCP Server
+DNS Server
+HTTP Server
+Email Server
+If you want, I can now:
+Add proper Viva Questions
+Convert this into PDF practical file format
+Or make it in 10-point answer format (like you prefer for exams)
+Tell me what you want next 💪
