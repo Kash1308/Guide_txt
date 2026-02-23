@@ -1,0 +1,439 @@
+OR PRACTICAL – PRACTICAL NO. 4
+Title
+Updating (Replacement) Model using POM-QM for Windows
+ 
+Aim
+To solve an Updating (Replacement) problem using POM-QM software and determine the optimal replacement policy with the help of an example.
+ 
+Theory
+Updating (Replacement) models in Operations Research are used to decide:
+•	When an item/equipment should be replaced
+•	To minimize total cost, which includes:
+o	Purchase cost
+o	Maintenance/operating cost
+o	Salvage value (if any)
+As equipment ages:
+•	Maintenance cost increases
+•	Efficiency decreases
+Hence, replacement becomes economically justified.
+ 
+Types of Replacement Problems
+1.	Replacement of items that deteriorate with time (gradual wear & tear)
+2.	Replacement of items that fail suddenly (random failure)
+👉 In this practical, we consider replacement due to deterioration.
+ 
+Example Problem
+A machine has the following data:
+Year	Maintenance Cost (₹)	Salvage Value (₹)
+1	1,000	7,000
+2	2,000	5,000
+3	3,500	3,000
+4	5,000	1,500
+5	7,000	500
+Initial cost of machine = ₹10,000
+Find the optimal year for replacement.
+
+Software Used
+POM-QM for Windows
+ 
+Steps in POM-QM Software
+Step 1: Open Software
+•	Open POM-QM for Windows
+Step 2: Select Module
+•	Click on Module
+•	Select Replacement / Equipment Replacement
+•	Choose Replacement due to Deterioration
+Step 3: Enter Problem Data
+•	Enter Initial cost = 10000
+•	Enter number of years = 5
+•	Enter maintenance cost year-wise
+•	Enter salvage value year-wise
+Step 4: Solve
+•	Click on Solve or Compute
+Step 5: View Output
+•	Software calculates:
+o	Average cost per year
+o	Optimal replacement period
+ 
+Result
+From the POM-QM output:
+👉 The machine should be replaced at the end of the 3rd year, as the average cost is minimum at that point.
+ 
+Conclusion
+Using the Updating (Replacement) model in POM-QM, the optimal replacement time is determined efficiently. This helps management take cost-effective decisions regarding equipment replacement.
+ 
+________________________________________
+
+OR PRACTICAL – GAME THEORY 1
+Practical No. 5
+ 
+Title
+To solve a two-person zero-sum game using POM-QM Software and determine the optimal strategies and value of the game.
+POM-QM (Production and Operations Management – Quantitative Methods) is a decision-support software used to solve Operations Research problems.
+ 
+Aim
+To apply Game Theory 1 for solving a two-person zero-sum game and to determine:
+•	Optimal strategies of both players
+•	Existence of a saddle point
+•	Value of the game using POM-QM software
+ 
+Software Used
+POM-QM for Windows
+ 
+Theory
+Game Theory is a branch of Operations Research that studies decision-making situations involving two or more players with conflicting objectives.
+In a two-person zero-sum game:
+•	Gain of one player equals the loss of the other
+•	Player A aims to maximize the payoff
+•	Player B aims to minimize the payoff
+•	Payoff matrix represents gains of Player A
+ 
+Explanation of Saddle Point
+A saddle point is a position in the payoff matrix where:
+•	The maximum of the row minimums (Maximin)
+is equal to
+•	The minimum of the column maximums (Minimax)
+If:
+Maximin = Minimax
+then the game has a saddle point and can be solved using a pure strategy.
+If:
+Maximin ≠ Minimax
+then no saddle point exists, and the game must be solved using mixed strategies.
+ 
+Problem Statement
+Solve the following game and determine the optimal strategies and value of the game.
+Player A \ Player B	B1	B2
+A1	2	4
+A2	3	1
+ 
+Saddle Point Check
+•	Row minimums:
+o	A1 → min(2, 4) = 2
+o	A2 → min(3, 1) = 1
+→ Maximin = 2
+•	Column maximums:
+o	B1 → max(2, 3) = 3
+o	B2 → max(4, 1) = 4
+→ Minimax = 3
+Since Maximin ≠ Minimax, no saddle point exists.
+ 
+Procedure (Using POM-QM Software)
+1.	Open POM-QM for Windows
+2.	Select Module → Game Theory
+3.	Click New
+4.	Enter:
+o	Player A strategies = 2
+o	Player B strategies = 2
+5.	Enter payoff values in the matrix
+6.	Click Solve
+7.	Note the optimal strategies and value of the game
+ 
+Result / Output
+•	Optimal strategy of Player A:
+o	A1 = 0.5
+o	A2 = 0.5
+•	Optimal strategy of Player B:
+o	B1 = 0.75
+o	B2 = 0.25
+•	Value of the Game:
+o	V = 2.5
+ 
+Conclusion
+The given game has no saddle point, hence it is solved using mixed strategies.
+POM-QM software provides the optimal strategies and the value of the game as 2.5.
+ 
+Learning Outcome
+•	Understood the concept of saddle point
+•	Learned to identify pure and mixed strategy games
+•	Gained hands-on experience with POM-QM software
+_________________________________________
+
+OR PRACTICAL – GAME THEORY–II
+Practical No. 6
+ 
+Title
+To solve a two-person zero-sum game using mixed strategies and determine the optimal strategies and value of the game using POM-QM Software.
+ 
+Aim
+To apply Game Theory–II concepts for solving a two-person zero-sum game involving mixed strategies and to determine:
+•	Optimal strategies of both players
+•	Value of the game
+using POM-QM software
+ 
+Software Used
+POM-QM (Production and Operations Management – Quantitative Methods) for Windows
+ 
+Theory
+Game Theory–II deals with games without a saddle point, where players cannot rely on pure strategies.
+In such cases, players adopt mixed strategies, i.e., they play each strategy with a certain probability.
+In a two-person zero-sum game:
+•	One player’s gain is equal to the other player’s loss
+•	Player A aims to maximize the payoff
+•	Player B aims to minimize the payoff
+•	Solution is obtained using probability distribution of strategies
+ 
+Explanation of Mixed Strategy
+A mixed strategy is a situation where a player does not choose a single strategy every time but assigns probabilities to each available strategy.
+Mixed strategies are used when:
+•	No saddle point exists
+•	Maximin value ≠ Minimax value
+ 
+Problem Statement
+Solve the following game and find the optimal mixed strategies and value of the game.
+Player A \ Player B	B1	B2
+A1	1	5
+A2	4	2
+ 
+Saddle Point Check
+•	Row minimums:
+o	A1 → min(1, 5) = 1
+o	A2 → min(4, 2) = 2
+→ Maximin = 2
+•	Column maximums:
+o	B1 → max(1, 4) = 4
+o	B2 → max(5, 2) = 5
+→ Minimax = 4
+Since Maximin ≠ Minimax, no saddle point exists.
+Hence, the game is solved using mixed strategies.
+ 
+Procedure (Using POM-QM Software)
+1.	Open POM-QM for Windows
+2.	Select Module → Game Theory
+3.	Click on New
+4.	Enter:
+o	Number of strategies for Player A = 2
+o	Number of strategies for Player B = 2
+5.	Enter the payoff matrix values
+6.	Click Solve
+7.	Note the optimal strategies and value of the game
+ 
+Result / Output
+•	Optimal strategy of Player A:
+o	A1 = 0.5
+o	A2 = 0.5
+•	Optimal strategy of Player B:
+o	B1 = 0.5
+o	B2 = 0.5
+•	Value of the Game:
+o	V = 3
+ 
+Conclusion
+The given game has no saddle point and hence is solved using mixed strategies.
+The optimal strategies and value of the game are successfully obtained using POM-QM software.
+ 
+Learning Outcome
+•	Understood the application of mixed strategy games
+•	Learned to identify games without saddle point
+•	Gained practical exposure to POM-QM software
+
+________________________________________
+
+📘 OR Practical No. 7
+Decision Theory – I : Decisions Under Uncertainty
+ 
+🎯 AIM
+To study Decision Making under Uncertainty using Decision Theory and solve the problem with the help of POM-QM software.
+ 
+📖 INTRODUCTION / THEORY
+Decision Theory deals with making optimal decisions when the future outcome is unknown.
+👉 Decision Under Uncertainty means:
+•	Probabilities of states of nature are not known
+•	Decision is based on criteria/rules, not probability
+ 
+🔑 KEY TERMS
+Term	Meaning
+Decision Alternatives	Available choices
+States of Nature	Future conditions beyond control
+Payoff	Profit / loss for each decision
+Payoff Table	Matrix showing outcomes
+ 
+📊 CRITERIA USED UNDER UNCERTAINTY
+1.	Maximax (Optimistic)
+2.	Maximin (Pessimistic)
+3.	Minimax Regret
+4.	Laplace (Equal Probability)
+ 
+🧮 EXAMPLE
+A company must decide the size of plant to install.
+👉 Alternatives
+•	A1: Small Plant
+•	A2: Medium Plant
+•	A3: Large Plant
+👉 States of Nature
+•	S1: Low Demand
+•	S2: Medium Demand
+•	S3: High Demand
+📈 Payoff Table (₹ in lakhs)
+Decision	Low	Medium	High
+Small Plant	4	4	4
+Medium Plant	2	6	8
+Large Plant	-3	3	10
+ 
+✍️ CALCULATIONS
+1️⃣ Maximax Criterion
+•	Small: max = 4
+•	Medium: max = 8
+•	Large: max = 10
+✅ Decision: Large Plant
+ 
+2️⃣ Maximin Criterion
+•	Small: min = 4
+•	Medium: min = 2
+•	Large: min = -3
+✅ Decision: Small Plant
+ 
+3️⃣ Laplace Criterion
+(Assuming equal probability)
+•	Small = (4+4+4)/3 = 4
+•	Medium = (2+6+8)/3 = 5.33
+•	Large = (-3+3+10)/3 = 3.33
+✅ Decision: Medium Plant
+ 
+4️⃣ Minimax Regret
+Regret Table
+Decision	Low	Medium	High	Max Regret
+Small	0	2	6	6
+Medium	2	0	2	2
+Large	7	3	0	7
+✅ Decision: Medium Plant (minimum regret = 2)
+ 
+💻 STEPS IN POM-QM SOFTWARE
+🔹 Step 1:
+Open POM-QM for Windows
+🔹 Step 2:
+Click Module → Decision Analysis
+🔹 Step 3:
+Select New Problem
+🔹 Step 4:
+Enter:
+•	Number of Alternatives = 3
+•	Number of States = 3
+•	Select Uncertainty
+🔹 Step 5:
+Enter Payoff values in the matrix
+🔹 Step 6:
+Choose criteria:
+•	Maximax
+•	Maximin
+•	Minimax Regret
+•	Laplace
+🔹 Step 7:
+Click Solve
+🔹 Step 8:
+Observe results & optimal decision for each criterion
+ 
+📌 RESULT / CONCLUSION
+Different criteria give different decisions:
+•	Optimistic → Large Plant
+•	Pessimistic → Small Plant
+•	Balanced & Regret-based → Medium Plant
+Thus, decision depends on manager’s attitude toward risk.
+ 
+_________________________________________
+📘 OR Practical No. 8
+Decision Theory – II : Decisions Under Risk
+ 
+🎯 AIM
+To study decision-making under Risk using Decision Theory and to obtain the optimal decision with the help of POM-QM software.
+ 
+📖 INTRODUCTION / THEORY
+Decision Under Risk is a situation where:
+•	Possible states of nature are known
+•	Probabilities are known or can be estimated
+•	Decision is made using expected values
+👉 Main techniques:
+•	Expected Monetary Value (EMV)
+•	Expected Opportunity Loss (EOL)
+•	Expected Value of Perfect Information (EVPI)
+ 
+🔑 IMPORTANT TERMS
+Term	Meaning
+Alternatives	Available decisions
+States of Nature	Future events
+Probability	Likelihood of each state
+Payoff	Profit / loss
+EMV	Expected Monetary Value
+ 
+📊 EXAMPLE
+A company plans to launch a new product and must choose advertising strategy.
+👉 Alternatives
+•	A1: Low Advertisement
+•	A2: Medium Advertisement
+•	A3: High Advertisement
+👉 States of Nature
+•	S1: Low Demand (P = 0.3)
+•	S2: Medium Demand (P = 0.5)
+•	S3: High Demand (P = 0.2)
+ 
+📈 Payoff Table (₹ in lakhs)
+Decision	Low	Medium	High
+Low Ad	4	6	8
+Medium Ad	2	7	12
+High Ad	-1	5	15
+ 
+✍️ CALCULATIONS
+1️⃣ Expected Monetary Value (EMV)
+[
+EMV = \sum (Payoff × Probability)
+]
+EMV Calculations:
+•	Low Ad
+= (4×0.3) + (6×0.5) + (8×0.2)
+= 5.8
+•	Medium Ad
+= (2×0.3) + (7×0.5) + (12×0.2)
+= 6.5
+•	High Ad
+= (-1×0.3) + (5×0.5) + (15×0.2)
+= 5.2
+✅ Optimal Decision (EMV): Medium Advertisement
+ 
+2️⃣ Expected Opportunity Loss (EOL)
+Minimum EOL gives the best decision.
+Decision	EOL
+Low Ad	1.7
+Medium Ad	1.0
+High Ad	2.1
+✅ Decision: Medium Advertisement
+ 
+3️⃣ Expected Value of Perfect Information (EVPI)
+[
+EVPI = Expected Payoff with Perfect Information – Max EMV
+]
+•	EV with PI = 7.5
+•	Max EMV = 6.5
+[
+EVPI = 1.0
+]
+ 
+💻 STEPS IN POM-QM SOFTWARE
+🔹 Step 1:
+Open POM-QM for Windows
+🔹 Step 2:
+Click Modules → Decision Analysis
+🔹 Step 3:
+Select New Problem
+🔹 Step 4:
+Enter:
+•	Alternatives = 3
+•	States of Nature = 3
+•	Select Decision under Risk
+🔹 Step 5:
+Enter probabilities of each state
+🔹 Step 6:
+Enter payoff values in the table
+🔹 Step 7:
+Click Solve
+🔹 Step 8:
+Observe results:
+•	EMV
+•	EOL
+•	EVPI
+•	Best alternative
+ 
+📌 RESULT / CONCLUSION
+The optimal decision is Medium Advertisement as it gives:
+•	Maximum Expected Monetary Value
+•	Minimum Expected Opportunity Loss
+Thus, Decision Theory under risk helps in selecting the best alternative using probability-based evaluation.
+ 
